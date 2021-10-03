@@ -1,5 +1,9 @@
 # How event loop works in JavaScript, async concept
 
+* JavaScript is synchronous, blocking and single threaded language by default.
+* There are few ways to make it behave asynchronous no-blocking.
+* This can be done by using *callback*, *promises* and *async/await* functions.
+
 Basic architecture
 ---
 
