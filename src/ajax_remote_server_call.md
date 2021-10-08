@@ -51,7 +51,7 @@ xhr.send(json);
 
 Better approach with fetch api.
 
-GET example with fetch
+GET example with fetch:
 
 ```js
  // AJAX request example using promise based fetch method.
