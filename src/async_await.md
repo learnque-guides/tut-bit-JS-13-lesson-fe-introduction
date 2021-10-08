@@ -15,11 +15,11 @@ Fetch data from api by using promises example:
 
 ```js
 function fetchCatImagesPromise(userId) {
-    return fetch(`http://catappapi.herokuapp.com/users/${userId}`)
+    return fetch(`/some/endpoint/user/${userId}`)
         .then(response => response.json())
         .then(user => {
             const promises = user.cats.map(catId =>
-                fetch(`http://catappapi.herokuapp.com/cats/${catId}`)
+                fetch(`/some/endpoint/cat/${catId}`)
                     .then(response => response.json())
                     .then(catData => catData.imageUrl)
             )
@@ -34,10 +34,10 @@ Fetch data from api by using async example:
 
 ```js
 async function fetchCatImagesAsync(userId) {
-    const response = await fetch(`https://api.thecatapi.com/v1/users/${userId}`);
+    const response = await fetch(`/some/endpoint/user/${userId}`);
     const user = await response.json();
     const catImageUrls = user.cats.map(async (catId) => {
-        const response = await fetch(`http://catappapi.herokuapp.com/cats/${catId}`);
+        const response = await fetch(`/some/endpoint/cat/${catId}`);
         const catData = await response.json();
         return catData.imageUrl;
     });

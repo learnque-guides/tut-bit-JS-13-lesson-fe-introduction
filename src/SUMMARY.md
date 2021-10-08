@@ -12,5 +12,6 @@
 - [Callback vs Promises](./callback_vs_promises.md)
 - [Ajax and remote server calling](./ajax_remote_server_call.md)
 - [Exercise 1](./exercise_1.md)
+- [Try catch](./try_and_catch.md)
 - [Async and Await](async_await.md)
 - [Generators](generators.md)
