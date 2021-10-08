@@ -1,6 +1,8 @@
 # Ajax and remote server calling
 
-Making request by using XMLHttpRequest object
+Making request by using XMLHttpRequest object.
+
+Get example:
 
 ```js
 const request = new XMLHttpRequest();
@@ -23,7 +25,33 @@ request.onerror = function() {
 request.send();
 ```
 
-Better approach with fetch api
+Post example:
+
+```js
+var url = "http://localhost:8080/api/v1/users";
+
+var data = {};
+data.firstname = "John2";
+data.lastname  = "Snow2";
+var json = JSON.stringify(data);
+
+var xhr = new XMLHttpRequest();
+xhr.open("PUT", url+'/12', true);
+xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+xhr.onload = function () {
+    var users = JSON.parse(xhr.responseText);
+    if (xhr.readyState == 4 && xhr.status == "200") {
+        console.table(users);
+    } else {
+        console.error(users);
+    }
+}
+xhr.send(json);
+```
+
+Better approach with fetch api.
+
+GET example with fetch
 
 ```js
  // AJAX request example using promise based fetch method.
@@ -40,7 +68,11 @@ function loadJson(path) {
 }
 
 loadLocalJson('GET url');
+```
 
+POST example with fetch:
+
+```js
 function postJson(path) {
     return fetch("/post/json/",
         {
